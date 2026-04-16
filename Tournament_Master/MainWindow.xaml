@@ -1,12 +1,30 @@
 ﻿<Window x:Class="Tournament_Master.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Tournament_Master"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Tournament Master - Керування командами" Height="500" Width="800"
+        WindowStartupLocation="CenterScreen">
 
+    <Grid Background="#F3F3F3">
+        <StackPanel Margin="30" MaxWidth="500">
+            <TextBlock Text="Назва нової команди:" FontSize="16" Margin="0,0,0,5"/>
+
+            <TextBox x:Name="TeamNameInput" 
+                     FontSize="18" 
+                     Padding="5" 
+                     Margin="0,0,0,15"/>
+
+            <Button Content="Додати в список" 
+                    Height="40" 
+                    Click="AddTeam_Click" 
+                    Background="#2196F3" 
+                    Foreground="White"
+                    FontSize="16"
+                    Cursor="Hand"/>
+
+            <Separator Margin="0,20"/>
+
+            <TextBlock Text="Список команд:" FontSize="16" Margin="0,0,0,5"/>
+            <ListBox x:Name="TeamsListBox" Height="200" FontSize="16"/>
+        </StackPanel>
     </Grid>
 </Window>

@@ -11,14 +11,21 @@ using System.Windows.Shapes;
 
 namespace Tournament_Master
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void AddTeam_Click(object sender, RoutedEventArgs e)
+        {
+            string teamName = TeamNameInput.Text.Trim();
+            if (!string.IsNullOrEmpty(teamName))
+            {
+                TeamsListBox.Items.Add(teamName);
+                TeamNameInput.Clear();
+            }
         }
     }
 }
