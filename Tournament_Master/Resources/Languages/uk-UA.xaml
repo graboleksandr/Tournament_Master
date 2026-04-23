@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="SettingsHeader">НАЛАШТУВАННЯ</sys:String>
+    <sys:String x:Key="ThemeOption">Тема інтерфейсу</sys:String>
+    <sys:String x:Key="LangOption">Мова програми</sys:String>
+    <sys:String x:Key="m_Home">Головна</sys:String>
+    <sys:String x:Key="m_Players">Гравці</sys:String>
+    <sys:String x:Key="m_Teams">Команди</sys:String>
+    <sys:String x:Key="m_Schedule">Розклад</sys:String>
+    <sys:String x:Key="m_Leaderboard">Таблиця</sys:String>
+    <sys:String x:Key="m_RecentTournaments">Останні збережені турніри:</sys:String>
+    <sys:String x:Key="m_Search">Пошук...</sys:String>
+    <sys:String x:Key="m_Import">Імпорт .txt</sys:String>
+    <sys:String x:Key="m_AddBtn">Додати</sys:String>
+    <sys:String x:Key="m_TotalPlayers">Гравців: 0</sys:String>
+    <sys:String x:Key="m_AutoGen">Авто-генерація</sys:String>
+    <sys:String x:Key="m_CreateManual">Створити вручну</sys:String>
+    <sys:String x:Key="m_RandomTeams">Рандомні команди</sys:String>
+    <sys:String x:Key="m_AddTeam">Додати команду</sys:String>
+    <sys:String x:Key="m_SearchMatch">Пошук за командою...</sys:String>
+    <sys:String x:Key="m_CreateSchedule">Створити розклад</sys:String>
+    <sys:String x:Key="m_SaveResults">Зберегти результати</sys:String>
+    <sys:String x:Key="m_Round">Раунд</sys:String>
+    <sys:String x:Key="m_Matches">ігор</sys:String>
+    <sys:String x:Key="m_LeaderboardHeader">Рейтинг учасників</sys:String>
+    <sys:String x:Key="m_GamesLabel">ігор</sys:String>
+</ResourceDictionary>

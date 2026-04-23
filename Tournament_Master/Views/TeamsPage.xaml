@@ -1,0 +1,83 @@
+﻿<Page x:Class="Tournament_Master.Views.TeamsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Teams" Background="{DynamicResource WindowBg}">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="0,0,15,0">
+            <Border Background="{DynamicResource SidebarBg}" CornerRadius="15" Padding="15" Margin="0,0,0,15" BorderBrush="{DynamicResource HoverColor}" BorderThickness="1">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource m_AutoGen}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource PrimaryText}" Margin="0,0,0,10"/>
+                    <TextBox x:Name="TxtPlayersPerTeam" Text="2" Height="35" Margin="0,5,0,15" 
+                             Background="{DynamicResource WindowBg}" Foreground="{DynamicResource PrimaryText}"
+                             VerticalContentAlignment="Center" TextAlignment="Center"/>
+                    <Button Content="{DynamicResource m_RandomTeams}" Click="BtnAutoGenerate_Click" 
+                            Background="{DynamicResource SidebarBg}" Foreground="{DynamicResource PrimaryText}" 
+                            Height="40" BorderBrush="{DynamicResource HoverColor}" BorderThickness="1"/>
+                </StackPanel>
+            </Border>
+
+            <Border Background="{DynamicResource SidebarBg}" CornerRadius="15" Padding="15" BorderBrush="{DynamicResource HoverColor}" BorderThickness="1">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource m_CreateManual}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource PrimaryText}" Margin="0,0,0,10"/>
+                    <TextBox x:Name="TxtTeamName" Height="35" Margin="0,0,0,10" 
+                             Background="{DynamicResource WindowBg}" Foreground="{DynamicResource PrimaryText}"
+                             VerticalContentAlignment="Center" Tag="Назва команди"/>
+
+                    <ListBox x:Name="ListPlayersSelector" Height="300" BorderThickness="0" Background="Transparent">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="5">
+                                    <CheckBox IsChecked="{Binding IsSelected, Mode=TwoWay}" Margin="0,0,10,0" VerticalAlignment="Center"/>
+                                    <TextBlock Text="{Binding FullName}" Foreground="{DynamicResource PrimaryText}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <Button Content="{DynamicResource m_AddTeam}" Click="BtnCreateManual_Click" 
+                            Background="{DynamicResource AccentColor}" Foreground="White" Height="40" Margin="0,15,0,0" BorderThickness="0"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <Border Grid.Column="1" Background="{DynamicResource SidebarBg}" CornerRadius="15" Padding="20" BorderBrush="{DynamicResource HoverColor}" BorderThickness="1">
+            <ScrollViewer>
+                <ItemsControl x:Name="TeamsDisplay">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Background="{DynamicResource WindowBg}" CornerRadius="12" Margin="0,0,0,12" Padding="15">
+                                <Grid>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding TeamName}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource AccentColor}"/>
+
+                                        <ItemsControl ItemsSource="{Binding Members}" Margin="0,10,0,0">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <WrapPanel/>
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Border Background="{DynamicResource SidebarBg}" CornerRadius="6" Margin="0,0,8,8" Padding="10,5" BorderBrush="{DynamicResource HoverColor}" BorderThickness="1">
+                                                        <TextBlock Text="{Binding FullName}" Foreground="{DynamicResource PrimaryText}"/>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                    <Button Content="✕" Click="BtnDelete_Click" HorizontalAlignment="Right" VerticalAlignment="Top" 
+                                            Foreground="#D32F2F" Background="Transparent" BorderThickness="0" FontWeight="Bold"/>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</Page>

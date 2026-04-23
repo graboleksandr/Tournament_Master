@@ -1,0 +1,56 @@
+﻿<Window x:Class="Tournament_Master.Views.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Авторизація" Height="550" Width="400" 
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#FFFBEB">
+
+    <Grid Margin="30">
+        <StackPanel x:Name="LoginPanel" Visibility="Visible">
+            <TextBlock Text="Вхід" FontSize="32" FontWeight="Black" Foreground="#78350F" HorizontalAlignment="Center" Margin="0,0,0,30"/>
+
+            <TextBlock Text="Логін" Foreground="#92400E" Margin="0,0,0,5"/>
+            <TextBox x:Name="LoginField" Height="40" VerticalContentAlignment="Center" Padding="10,0"
+                     TextChanged="Input_Changed"/>
+            <TextBlock Text="Пароль" Foreground="#92400E" Margin="0,15,0,5"/>
+            <PasswordBox x:Name="PasswordField" Height="40" VerticalContentAlignment="Center" Padding="10,0"
+                         PasswordChanged="Input_Changed"/>
+            <TextBlock x:Name="StatusLabel" TextWrapping="Wrap" TextAlignment="Center" Margin="0,15,0,0" FontWeight="SemiBold"/>
+
+            <Button Content="Увійти" Click="BtnLogin_Click" Margin="0,20,0,0" Height="50" Background="#F59E0B" Foreground="White" FontWeight="Bold" FontSize="16"/>
+            <Button Content="Немає акаунту? Реєстрація" Click="ShowRegister_Click" Background="Transparent" BorderThickness="0" Foreground="#B45309" Margin="0,15"/>
+        </StackPanel>
+
+        <StackPanel x:Name="RegisterPanel" Visibility="Collapsed">
+            <TextBlock Text="Реєстрація" FontSize="32" FontWeight="Black" Foreground="#78350F" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+            <UniformGrid Columns="2">
+                <StackPanel Margin="0,0,5,0">
+                    <TextBlock Text="Ім'я" Foreground="#92400E"/>
+                    <TextBox x:Name="RegFirstName" Height="35" VerticalContentAlignment="Center"/>
+                </StackPanel>
+                <StackPanel Margin="5,0,0,0">
+                    <TextBlock Text="Прізвище" Foreground="#92400E"/>
+                    <TextBox x:Name="RegLastName" Height="35" VerticalContentAlignment="Center"/>
+                </StackPanel>
+            </UniformGrid>
+
+            <TextBlock Text="Логін *" Foreground="#92400E" Margin="0,10,0,5"/>
+            <TextBox x:Name="RegLogin" Height="35" VerticalContentAlignment="Center" TextChanged="RegInput_Changed"/>
+
+            <TextBlock Text="Пароль *" Foreground="#92400E" Margin="0,10,0,5"/>
+            <PasswordBox x:Name="RegPassword" Height="35" VerticalContentAlignment="Center" PasswordChanged="RegInput_Changed"/>
+
+            <TextBlock Text="Стать" Foreground="#92400E" Margin="0,10,0,5"/>
+            <ComboBox x:Name="RegGender" Height="35" VerticalContentAlignment="Center">
+                <ComboBoxItem Content="Не вказано" IsSelected="True"/>
+                <ComboBoxItem Content="Чоловіча"/>
+                <ComboBoxItem Content="Жіноча"/>
+            </ComboBox>
+
+            <TextBlock x:Name="StatusLabelReg" TextWrapping="Wrap" TextAlignment="Center" Margin="0,10,0,0" FontWeight="SemiBold"/>
+
+            <Button Content="Зареєструватися" Click="BtnDoRegister_Click" Margin="0,15,0,0" Height="45" Background="#6366F1" Foreground="White" FontWeight="Bold"/>
+            <Button Content="Вже є акаунт? Увійти" Click="ShowLogin_Click" Background="Transparent" BorderThickness="0" Foreground="#4338CA" Margin="0,10"/>
+        </StackPanel>
+    </Grid>
+</Window>

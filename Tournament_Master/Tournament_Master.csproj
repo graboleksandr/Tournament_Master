@@ -9,10 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Resources\" />
-    <Folder Include="Views\" />
+    <None Remove="Resources\Images\cup_icon.png" />
+    <None Remove="Resources\Images\player_photo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\cup_icon.png" />
+    <Resource Include="Resources\Images\player_photo.png" />
   </ItemGroup>
 
 </Project>
